@@ -27,6 +27,7 @@
   <link rel="stylesheet" type="text/css" href="../dist/components/sidebar.css">
   <link rel="stylesheet" type="text/css" href="../dist/components/transition.css">
 
+<!--  Style for the header - top of the website-->
   <style type="text/css">
     .hidden.menu {
       display: none;
@@ -116,6 +117,7 @@
 
   </style>
 
+<!--  JS files - opening menu and sidebar  -->
   <script src="assets/library/jquery.min.js"></script>
   <script src="../dist/components/visibility.js"></script>
   <script src="../dist/components/sidebar.js"></script>
@@ -148,17 +150,17 @@
 </head>
 <body>
 
-<!-- Following Menu -->
+<!-- Main Menu, same for every file  -->
 <div class="ui large top fixed hidden menu">
   <div class="ui container">
     <a class="active item">Home</a>
     <a class="item">About</a>
     <a class="item">Informational Articles</a>
-    <a class="item">Other</a>
+    <a class="item">How to help</a>
     <div class="right menu">
-      <div class="item">
-        <a class="ui button">Log in</a>
-      </div>
+<!--      <div class="item">-->
+<!--        <a class="ui button">Log in</a>-->
+<!--      </div>-->
       <div class="item">
         <a class="ui primary button">Sign Up</a>
       </div>
@@ -171,15 +173,14 @@
   <a class="active item">Home</a>
   <a class="item">About</a>
   <a class="item">Informational Articles</a>
-  <a class="item">Other</a>
+  <a class="item">How to Help</a>
   <a class="item">Login</a>
   <a class="item">Signup</a>
 </div>
 
 
 <!-- Page Contents -->
-<div class="pusher">
-  <div class="ui inverted vertical masthead center aligned segment">
+<div class="pusher"><div class="ui inverted vertical masthead center aligned segment">
 
     <div class="ui container">
       <div class="ui large secondary inverted pointing menu">
@@ -187,33 +188,35 @@
           <i class="sidebar icon"></i>
         </a>
         <a class="active item">Home</a>
-        <a class="item">About</a>
-        <a class="item">Informational Articles</a>
-        <a class="item">Other</a>
+        <a class="item" href="about.html">About</a>
+        <a class="item" href="art.html">Informational Articles</a>
+        <a class="item" href="other.html">How to Help</a>
         <div class="right item">
-          <a class="ui inverted button">Log in</a>
-          <a class="ui inverted button">Sign Up</a>
+<!--          <a class="ui inverted button" href="login.html">Log in</a>-->
+          <a class="ui inverted button" href="https://forms.gle/V23FG1WvSWTsMZTk7">Sign Up</a>
         </div>
       </div>
     </div>
 
+<!--  Title at the top of the page-->
     <div class="ui text container">
       <h1 class="ui inverted header">
         Reducing your Environmental Footprint
       </h1>
       <h2>If the earth can change, why can't we?</h2>
-      <div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div>
+      <div class="ui huge primary button">Get Started<i class="right arrow icon" ></i></div>
     </div>
 
   </div>
 
+<!--  Actual web content-->
   <div class="ui vertical stripe segment">
     <div class="ui middle aligned stackable grid container">
       <div class="row">
         <div class="eight wide column">
-          <h3 class="ui header">Write whatever</h3>
-          <p>write whatever</p>
-          <h3 class="ui header">write whatever</h3>
+          <h3 class="ui header">What is your environmental footprint?</h3>
+          <p>...</p>
+          <h3 class="ui header">Why does it matter?</h3>
           <p>write whatever</p>
         </div>
       </div>
@@ -256,7 +259,7 @@
     </div>
   </div>
 
-
+<!--Footer code-->
   <div class="ui inverted vertical footer segment">
     <div class="ui container">
       <div class="ui stackable inverted divided equal height stackable grid">
@@ -273,7 +276,7 @@
         </div>
         <div class="three wide column">
           <h4 class="ui inverted header">Contacts</h4>
-          <div class="ui inverted link list">
+           <div class="ui inverted link list">
             <a href="#" class="item">pl246821@ahschool.com</a>
             <a href="#" class="item">annapriore07@gmail.com</a>
             <a href="#" class="item">pl247091@ahschool.com</a>
