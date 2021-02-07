@@ -1,1 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
+  <!-- Site Properties -->
+  <title>Homepage - Semantic</title>
+  <link rel="stylesheet" type="text/css" href="../dist/components/reset.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/site.css">
+
+  <link rel="stylesheet" type="text/css" href="../dist/components/container.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/grid.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/header.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/image.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/menu.css">
+
+  <link rel="stylesheet" type="text/css" href="../dist/components/divider.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/dropdown.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/segment.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/button.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/list.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/icon.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/sidebar.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/transition.css">
+
+<!--  Style for the header - top of the website-->
+  <style type="text/css">
+    .hidden.menu {
+      display: none;
+    }
+
+    .masthead.segment {
+      min-height: 700px;
+      padding: 1em 0em;
+    }
+    .masthead .logo.item img {
+      margin-right: 1em;
+    }
+    .masthead .ui.menu .ui.button {
+      margin-left: 0.5em;
+    }
+    .masthead h1.ui.header {
+      margin-top: 3em;
+      margin-bottom: 0em;
+      font-size: 4em;
+      font-weight: normal;
+    }
+    .masthead h2 {
+      font-size: 1.7em;
+      font-weight: normal;
+    }
+
+    .ui.vertical.stripe {
+      padding: 8em 0em;
+    }
+    .ui.vertical.stripe h3 {
+      font-size: 2em;
+    }
+    .ui.vertical.stripe .button + h3,
+    .ui.vertical.stripe p + h3 {
+      margin-top: 3em;
+    }
+    .ui.vertical.stripe .floated.image {
+      clear: both;
+    }
+    .ui.vertical.stripe p {
+      font-size: 1.33em;
+    }
+    .ui.vertical.stripe .horizontal.divider {
+      margin: 3em 0em;
+    }
+
+    .quote.stripe.segment {
+      padding: 0em;
+    }
+    .quote.stripe.segment .grid .column {
+      padding-top: 5em;
+      padding-bottom: 5em;
+    }
+
+    .footer.segment {
+      padding: 5em 0em;
+    }
+
+    .secondary.pointing.menu .toc.item {
+      display: none;
+    }
+
+    @media only screen and (max-width: 700px) {
+      .ui.fixed.menu {
+        display: none !important;
+      }
+      .secondary.pointing.menu .item,
+      .secondary.pointing.menu .menu {
+        display: none;
+      }
+      .secondary.pointing.menu .toc.item {
+        display: block;
+      }
+      .masthead.segment {
+        min-height: 350px;
+      }
+      .masthead h1.ui.header {
+        font-size: 2em;
+        margin-top: 1.5em;
+      }
+      .masthead h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+      }
+      .tab { margin-left: 60px;}
+    }
+
+
+  </style>
+
+<!--  JS files - opening menu and sidebar  -->
+  <script src="assets/library/jquery.min.js"></script>
+  <script src="../dist/components/visibility.js"></script>
+  <script src="../dist/components/sidebar.js"></script>
+  <script src="../dist/components/transition.js"></script>
+  <script>
+  $(document)
+    .ready(function() {
+
+      // fix menu when passed
+      $('.masthead')
+        .visibility({
+          once: false,
+          onBottomPassed: function() {
+            $('.fixed.menu').transition('fade in');
+          },
+          onBottomPassedReverse: function() {
+            $('.fixed.menu').transition('fade out');
+          }
+        })
+      ;
+
+      // create sidebar and attach to menu open
+      $('.ui.sidebar')
+        .sidebar('attach events', '.toc.item')
+      ;
+
+    })
+  ;
+  </script>
+</head>
+<body>
+
+<!-- Main Menu, same for every file  -->
+<div class="ui large top fixed hidden menu">
+  <div class="ui container">
+    <a class="item">Home</a>
+    <a class="item">About</a>
+    <a class="item">Informational Articles</a>
+    <a class="item">How to help</a>
+    <div class="right menu">
+<!--      <div class="item">-->
+<!--        <a class="ui button">Log in</a>-->
+<!--      </div>-->
+      <div class="item">
+        <a class="ui primary button">Sign Up</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sidebar Menu -->
+<div class="ui vertical inverted sidebar menu">
+  <a class="active item">Home</a>
+  <a class="item">About</a>
+  <a class="item">Informational Articles</a>
+  <a class="item">How to Help</a>
+  <a class="item">Login</a>
+  <a class="item">Signup</a>
+</div>
+
+
+<!-- Page Contents -->
+<div class="pusher"><div class="ui inverted vertical masthead center aligned segment">
+
+    <div class="ui container">
+      <div class="ui large secondary inverted pointing menu">
+        <a class="toc item">
+          <i class="sidebar icon"></i>
+        </a>
+        <a class="item" href="../index.html">Home</a>
+        <a class="item" href="../about.html">About</a>
+        <a class="item" href="../inform.html">Informational Articles</a>
+        <a class="item" href="../howtohelp.html">How to Help</a>
+        <div class="right item">
+<!--          <a class="ui inverted button" href="login.html">Log in</a>-->
+          <a class="ui inverted button" href="https://forms.gle/V23FG1WvSWTsMZTk7">Sign Up</a>
+        </div>
+      </div>
+    </div>
+
+
+<!--  Title at the top of the page-->
+    <div class="ui text container">
+      <h1 class="ui inverted header">
+        An Environmentally Friendly Fall
+      </h1>
+      <h2>If the earth can change, why can't we?</h2>
+      <div class="ui huge primary button"<p><a style="color:#FFFFFF" href="../howtohelp.html">Return to Home</a></p></div>
+    </div>
+</div>
+
+<!--  Actual web content-->
+<div class="ui vertical stripe segment">
+    <div class="ui middle aligned stackable grid container">
+      <div class="row">
+        <div class="fifteen wide column">
+          <h3 class="ui header">An Environmentally Friendly Fall</h3>
+          <p><B>Let’s be honest: does fall even exist?</B></p>
+            <p>In Florida, it can be a little difficult to get into the fall spirit when temperatures stay in the 80s and the threat of hurricanes doesn’t relent until winter. However, it’s undeniable that those rare days, where the breeze is cool and a few leaves are cascading down the oak trees, are what truly define the fall season in Florida.</p>
+            <p>Fortunately, we have some tips on how to thoroughly enjoy this cozy season while also reducing climate change so that the generations after us can experience more of those rare and desired autumn days.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="ui vertical stripe segment">
+    <div class="ui middle aligned stackable grid container">
+      <div class="row">
+        <ul class="fifteen wide column">
+          <h3 class="ui header">It Can If We Try Hard Enough!</h3>
+            <p><B>When the weather cools down, it leaves room for many ways to reduce your environmental footprint. You can:</B></p>
+             <p><ul style="font-size:20px" style="font-family:"'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif" type="1">
+                    <li>Turn off your AC or open your windows to save energy.</li>
+                    <br>
+                    <li>Walk to more places instead of driving.</li>
+                    <br>
+                    <li>Since Florida is pretty bright even in fall, try to use daylight to your advantage and avoid turning on your lights until it gets too dark.</li>
+                    <br>
+                    <li>For any leaves that do end up falling, you can compost them into mulch instead of letting them get wrapped up in plastic bags and thrown into landfills.</li>
+                    <br>
+            <ul style="font-size:20px" style="font-family:"'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif" type="1">
+            <li>How to make mulch for a garden:</li>
+                    <br>
+            <ul style="font-size:20px" style="font-family:"'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif" type="1">
+            <li>Add a 2 inch layer of shredded leaves to the soil, being careful to not let the leaves to directly come in contact with any stems or roots.</li>
+                    <br>
+           <ul style="font-size:20px" style="font-family:"'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif" type="1">
+            <li>Leaves retain water, so it will protect your plants during dry spells in winter and it will reduce weed growth.</li>
+                    <br>
+
+            </ul><li>How to make compost:</li>
+                    <br>
+            <ul style="font-size:20px" style="font-family:"'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif" type="1">
+            <li>Layer your leaves with other organic material (fruit/vegetable scraps, egg shells, weeds, grass clippings, or dead plants).</li>
+                    <br>
+           <ul style="font-size:20px" style="font-family:"'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif" type="1">
+            <li>Turn over the compost occasionally, and you’ll have a rich, healthy compost by spring.</li>
+          <br>
+          </ul>
+      </ul>
+          </ul>
+          </ul>
+          </ul>
+          <p><B>Just because we don’t experience the most “fall” weather doesn’t mean we can’t immerse ourselves in the food and festivity of it!</B></p>
+           <p><ul style="font-size:20px" style="font-family:"'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif" type="1">
+                    <li>Use a slow cooker to cook cozy comfort foods like soups, stews, casseroles, roasts, and anything else you want, rather than using an oven. This will help conserve energy!</li>
+                    <br>
+                    <li>When buying fall coffee, pastries, or other foods, try to support businesses that use less plastic.</li>
+                    <br>
+                    <li>Eat local seasonal produce (pears, sweet potatoes, mushrooms, Brussels sprouts, cauliflower, figs, squash, pumpkin, and apples).</li>
+                    <br>
+
+           <p><ul style="font-size:20px" style="font-family:"'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif" type="1">
+                    <li>Foods that are grown and harvested in their natural time frame require less energy to produce, and local sources have a smaller travel footprint than imported goods.</li>
+                    <br>
+                    <li>Go to your local farmer’s market with a friend and pick out some juicy fruits or pumpkins!</li>
+                    <br>
+                </ul></p>
+
+
+                    <li>Go to an outdoor fall festival and spend time in nature with those closest to you!</li>
+          <br>
+                </ul></p>
+          <p><B>If your skin starts to dry out due to ‘colder’ temperatures, try stay away from products with ingredients that harm you or your environment, such as:</B></p>
+
+ <p><ul style="font-size:20px" style="font-family:"'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif" type="1">
+                    <li>Exfoliators with microbeads/microplastics, since these beads are polluting our waterways, being eaten by fish and other wildlife, and are making their way into our bodies as well.</li>
+                    <br>
+
+           <p><ul style="font-size:20px" style="font-family:"'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif" type="1">
+                    <li>Watch out for ingredients that show microbeads, micro abrasives, polypropylene, or polyethylene</li>
+                    <br>
+                </ul></p>
+
+                    <li>Moisturizers and makeup often contain BHA and BHT, which may disrupt your hormones.</li>
+
+           <p><ul style="font-size:20px" style="font-family:"'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif" type="1">
+                    <li>BHA has a tendency to bioaccumulate, is toxic to aquatic organisms, and causes genetic mutations in amphibians.</li>
+                    <br>
+                    <li>BHT also has a moderate to high potential for bioaccumulation in aquatic species.</li>
+                    <br>
+                </ul></p>
+
+
+
+                    <br>
+                    <li>Next time you want to buy a warm vanilla candle, a pumpkin spice body spray, or a bergamot perfume, try to avoid synthetic fragrances.</li>
+          <br>
+
+           <p><ul style="font-size:20px" style="font-family:"'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif" type="1">
+                    <li>Wastewater treatment plants don’t break fragrance chemicals down, so they slip into the rivers and oceans via sewage discharge and reduce organisms’ abilities to protect themselves from other toxins.</li>
+                    <br>
+                    <li>Fragrance chemicals persist in the environment, and accumulate in the tissues of fish and other invertebrates.</li>
+                    <br>
+                </ul></p>
+
+                    <li>Siloxanes (like cyclomethicone and cyclotetrasiloxane), which are used in anti-aging products, creams, lotions, makeup, hair care, and more, should also be avoided.</li>
+          <br>
+
+
+           <p><ul style="font-size:20px" style="font-family:"'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif" type="1">
+                    <li>These chemicals bioaccumulate in fish, and high levels of them were found in several Nordic countries.</li>
+                    <br>
+                    <li>Siloxanes accumulated in aquatic life in Nordic lakes, Lake Erie in Canada, and Lake Pepin in the U.S., even higher up in the food chain, raising risks of people consuming them.</li>
+                    <br>
+                    <li>Studies have also shown that siloxanes that we apply to our bodies can volatilize-which means they can become released into the air as well as contaminate our waterways.</li>
+                    <br>
+                    <li>In 2015, the American Chemical Society reported that scientists had found traces of these compounds in soil, plants, phytoplankton, and krill all the way down in Antarctica.</li>
+                </ul></p>
+
+
+                </ul></p>
+
+          <br>
+
+          <p><B>You can still be eco-friendly on Thanksgiving!</B></p>
+
+
+
+
+          <p><ul style="font-size:20px" style="font-family:"'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif" type="1">
+                    <li>Use reusable/biodegradable dishes if you have many people coming over, rather than plastic.</li>
+                    <br>
+                    <li>Use recyclable decorations or make decorations yourself (pinecones, cardboard, paper––get creative!). This can be fun for children as well.</li>
+                    <br>
+                    <li>Stay with turkey instead of beef or lamb, since one kilogram of beef causes 27 kilograms of CO2, but a kilogram of turkey causes under 11 kilograms of carbon dioxide.</li>
+          <br>
+
+
+<p><ul style="font-size:20px" style="font-family:"'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif" type="1">
+                    <li>If you can, buy a certified-organic or pasture-raised turkey and try to avoid frozen turkeys.</li>
+
+                </ul></p>
+
+
+                    <li>Offer more plant-based side dishes or even have a full vegetarian/vegan meal.</li>
+          <br>
+
+
+
+<p><ul style="font-size:20px" style="font-family:"'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif" type="1">
+                    <li>The same amount of tofu has 20% of the emissions from turkey, and less than 10% of the emissions from beef.</li>
+                    <br>
+                </ul></p>
+
+
+
+                    <li>Plan your meal to minimize food waste (you can avoid buying in bulk or make stock from leftovers).</li>
+          <br>
+                    <li>Support local farmers and buy fresh produce.</li>
+          <br>
+                    <li>Use high quality, durable Tupperware to store leftovers.</li>
+                </ul></p>
+
+
+
+          <p>Remember that the choices you make will help the environment, no matter what season it is, and enjoy your pumpkin spice lattes in reusable cups.</p>
+
+
+
+
+      </p>
+
+      </ul>
+        </div>
+      </div>
+    </div>
+
+
+<!--Footer code-->
+  <div class="ui inverted vertical footer segment">
+    <div class="ui container">
+      <div class="ui stackable inverted divided equal height stackable grid">
+        <div class="three wide column">
+          <h4 class="ui inverted header">The Planet Programmers</h4>
+          <div class="ui inverted link list">
+            <a class="item">Angelina Wu</a>
+            <a class="item">Anna Priore</a>
+            <a class="item">Jennifer Chiou </a>
+            <a class="item">Kayla Pena</a>
+            <a class="item">Sarah Dufays</a>
+
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">Contacts</h4>
+           <div class="ui inverted link list">
+            <a class="item">pl246821@ahschool.com</a>
+            <a class="item">annapriore07@gmail.com</a>
+            <a class="item">pl247091@ahschool.com</a>
+            <a class="item">pl247111@ahschool.com</a>
+            <a class="item">pl247711@ahschool.com</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+</html>
