@@ -1,1 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
+  <!-- Site Properties -->
+  <title>Homepage - Semantic</title>
+  <link rel="stylesheet" type="text/css" href="../dist/components/reset.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/site.css">
+
+  <link rel="stylesheet" type="text/css" href="../dist/components/container.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/grid.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/header.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/image.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/menu.css">
+
+  <link rel="stylesheet" type="text/css" href="../dist/components/divider.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/dropdown.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/segment.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/button.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/list.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/icon.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/sidebar.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/transition.css">
+
+<!--  Style for the header - top of the website-->
+  <style type="text/css">
+    .hidden.menu {
+      display: none;
+    }
+
+    .masthead.segment {
+      min-height: 700px;
+      padding: 1em 0em;
+    }
+    .masthead .logo.item img {
+      margin-right: 1em;
+    }
+    .masthead .ui.menu .ui.button {
+      margin-left: 0.5em;
+    }
+    .masthead h1.ui.header {
+      margin-top: 3em;
+      margin-bottom: 0em;
+      font-size: 4em;
+      font-weight: normal;
+    }
+    .masthead h2 {
+      font-size: 1.7em;
+      font-weight: normal;
+    }
+
+    .ui.vertical.stripe {
+      padding: 8em 0em;
+    }
+    .ui.vertical.stripe h3 {
+      font-size: 2em;
+    }
+    .ui.vertical.stripe .button + h3,
+    .ui.vertical.stripe p + h3 {
+      margin-top: 3em;
+    }
+    .ui.vertical.stripe .floated.image {
+      clear: both;
+    }
+    .ui.vertical.stripe p {
+      font-size: 1.33em;
+    }
+    .ui.vertical.stripe .horizontal.divider {
+      margin: 3em 0em;
+    }
+
+    .quote.stripe.segment {
+      padding: 0em;
+    }
+    .quote.stripe.segment .grid .column {
+      padding-top: 5em;
+      padding-bottom: 5em;
+    }
+
+    .footer.segment {
+      padding: 5em 0em;
+    }
+
+    .secondary.pointing.menu .toc.item {
+      display: none;
+    }
+
+    @media only screen and (max-width: 700px) {
+      .ui.fixed.menu {
+        display: none !important;
+      }
+      .secondary.pointing.menu .item,
+      .secondary.pointing.menu .menu {
+        display: none;
+      }
+      .secondary.pointing.menu .toc.item {
+        display: block;
+      }
+      .masthead.segment {
+        min-height: 350px;
+      }
+      .masthead h1.ui.header {
+        font-size: 2em;
+        margin-top: 1.5em;
+      }
+      .masthead h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+      }
+      .tab { margin-left: 60px;}
+    }
+
+    .double {
+      line-height: 2 ;
+    }
+
+
+  </style>
+
+<!--  JS files - opening menu and sidebar  -->
+  <script src="assets/library/jquery.min.js"></script>
+  <script src="../dist/components/visibility.js"></script>
+  <script src="../dist/components/sidebar.js"></script>
+  <script src="../dist/components/transition.js"></script>
+  <script>
+  $(document)
+    .ready(function() {
+
+      // fix menu when passed
+      $('.masthead')
+        .visibility({
+          once: false,
+          onBottomPassed: function() {
+            $('.fixed.menu').transition('fade in');
+          },
+          onBottomPassedReverse: function() {
+            $('.fixed.menu').transition('fade out');
+          }
+        })
+      ;
+
+      // create sidebar and attach to menu open
+      $('.ui.sidebar')
+        .sidebar('attach events', '.toc.item')
+      ;
+
+    })
+  ;
+  </script>
+</head>
+<body>
+
+<!-- Main Menu, same for every file  -->
+<div class="ui large top fixed hidden menu">
+  <div class="ui container">
+    <a class="item">Home</a>
+    <a class="item">About</a>
+    <a class="item">Informational Articles</a>
+    <a class="item">How to help</a>
+    <div class="right menu">
+<!--      <div class="item">-->
+<!--        <a class="ui button">Log in</a>-->
+<!--      </div>-->
+      <div class="item">
+        <a class="ui primary button">Sign Up</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sidebar Menu -->
+<div class="ui vertical inverted sidebar menu">
+  <a class="active item">Home</a>
+  <a class="item">About</a>
+  <a class="item">Informational Articles</a>
+  <a class="item">How to Help</a>
+  <a class="item">Login</a>
+  <a class="item">Signup</a>
+</div>
+
+
+<!-- Page Contents -->
+<div class="pusher"><div class="ui inverted vertical masthead center aligned segment">
+
+    <div class="ui container">
+      <div class="ui large secondary inverted pointing menu">
+        <a class="toc item">
+          <i class="sidebar icon"></i>
+        </a>
+        <a class="item" href="../index.html">Home</a>
+        <a class="item" href="../about.html">About</a>
+        <a class="item" href="../inform.html">Informational Articles</a>
+        <a class="item" href="../howtohelp.html">How to Help</a>
+        <div class="right item">
+<!--          <a class="ui inverted button" href="login.html">Log in</a>-->
+          <a class="ui inverted button" href="https://forms.gle/V23FG1WvSWTsMZTk7">Sign Up</a>
+        </div>
+      </div>
+    </div>
+
+
+<!--  Title at the top of the page-->
+    <div class="ui text container">
+      <h1 class="ui inverted header">
+        An Environmentally-friendly Winter Season
+      </h1>
+      <h2>If the earth can change, why can't we?</h2>
+      <div class="ui huge primary button" <p ><a style="color:#FFFFFF" href="../howtohelp.html">Return to Home</a></p></div>
+    </div>
+</div>
+
+<!--  Actual web content-->
+<div class="ui vertical stripe segment">
+    <div class="ui middle aligned stackable grid container">
+      <div class="row">
+        <div class="fifteen wide column">
+            <div class="ui vertical stripe segment">
+                <h3 class="ui header"><B>An Environmentally-friendly Winter Season</B></h3>
+                <p class="double">While it is true that wintertime and the holidays are a great time to grab sugary hot cocoa and snuggle up
+                      on the couch to watch Christmas classics with our loved ones, we cannot forget that these festive times of
+                      the year are also the time when the earth suffers the most. While we’re shuffling through Target isles for
+                      the perfect gift and that one ornament that’s just the right shade of red, we never think about what all those
+                      glimmering decorations, gifts, and overindulgences are doing to the earth.</p>
+                <p><B><I>
+                     News flash: it's not good.
+                </I></B></p>
+                <p class="double">
+                    Consumerism, the promotion of the buying of products, is a trend that has gotten increasingly more of an issue
+                    as globalization, overproduction, and consumption rise. This doesn’t seem like an alarming problem at first. However
+                    with over three trillion consumers, and with that number exponentially increasing, the amount of resources we will
+                    continue to consume will increase dramatically.
+                </p>
+                <br>
+                <p>
+                    This means more waste and pollution will be put out to the environment.
+                </p>
+                <br>
+                <p class="double">
+                     In the past decade in America, between Thanksgiving and New Year’s Day,
+                    people dispose of a million <I>extra</I> tons of garbage each <I>week.</I>
+                </p>
+                <br>
+                <p class="double"><I>
+                    What happens to all of the furniture, broken technology, and food waste that are thrown away?
+                </I></p>
+                <br>
+                <p class="double">
+                    Those items pile up, and soon we won't have the resources left to properly dispose of them.
+                    Of course, buying necessities isn't the issue here. The issue is what happens when products are
+                    being overproduced and over consumed. For example, about 60m tonnes of produce, coming 160 billion
+                    dollars a year, is wasted. This is ⅓ of all food products in the United States. Additionally, the
+                    United States uses more electricity on holiday lights than entire countries do in a whole year. The
+                    want for overindulgence rooted in the mannerisms of first world inhabitants urges people to both buy and spend much more than they need, especially as Black Friday and Christmas sales start to pepper storefronts.
+                </p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <h3 class="ui header"><B>How to Help?</B></h3>
+            <p class="double">
+                The colossal amount of waste brought about by first world countries is evidently unnecessary. Consider
+                trying out these holiday tips to reduce your environmental footprint this year :
+            </p>
+            <h3 class="ui header"><B>1. Avoid over-packaging</B></h3>
+            <p class="double">
+                Over packaging tends to be the worst of Christmas time consumerism. National Geographic cites that
+                “over-wrapped food items are a principal source of the mounds of unnecessary waste that wind up in the nation’s landfills.”
+            </p>
+            <p class="double">
+                During the holiday season, we love to pile on layers and layers of gaudy wrapping paper topped off with shiny bows,
+                but how much is too much, and where does it all go after its minute or so of fame?
+            </p>
+            <p class="double">
+                Well, to put it into perspective, in 2017, the U.S. spent 12.7 billion dollars on gift wrap and bags.
+                We can't just throw all this away either. Due to the unique way wrapping paper is dyed and laminated, it is
+                almost impossible to reuse or recycle. At that point, what is left is almost four million pounds, or 5,787 NFL football fields, of wrapping paper sitting in landfill.
+            </p>
+            <p>
+                <I>
+                    Yearly.
+                </I>
+            </p>
+            <p class="double">
+                 Making your own wrapping paper through creative methods - such as wrapping presents in old maps, comic sections of newspapers,
+                artwork, or even clothing items that could be a gift in and of itself - , reusing gift boxes throughout the years, using recycled
+                paper, and even bypassing its use altogether is a great way to reduce your family’s environmental footprint this holiday season.
+            </p>
+            <h3 class="ui header"><B>2. Buy energy-saving LED Holiday Lights</B></h3>
+            <p class="double">
+                It’s no secret that we all look forward to decking out our houses with Christmas decorations that set the joyous
+                mood for the holiday season. Millions of families throughout America decorate their homes and yards with Christmas lights:
+                tree lights, string lights, robotic waving Santas, sparkling reindeers…  — <I>you name it.</I>
+            </p>
+            <br>
+            <p class="double">
+                However when looked into, the math ultimately demonstrates that the United States uses a lot of energy throughout the holidays.
+                As a matter of fact, many individual states use more electricity during this time than entire countries do in an entire year.
+            </p>
+            <p class="double">
+                Thankfully, due to an incredible feat of humanity known as technology, LED lights offer an alternative source to incandescent
+                lighting. They use around ninety percent less energy than conventional christmas lights. According to a study conducted by the U.S.
+                Department of Energy, if everyone were to replace their conventional holiday light strings with LEDs, at least two billion kilowatt-
+                hours of electricity could be saved in a month. The savings would be enough to power 200,000 homes for a year.
+            </p>
+            <h3 class="ui header"><B>3. Recycle your Christmas tree</B></h3>
+            <p>
+                Out of the 25 to 30 million trees purchased each year, around ten million end up in a landfill. Although it’s true your
+                Christmas tree will (most likely) not be able to fit in your regular recycling bin, numerous ways exist to dispose of them
+                in an environmentally friendly way. Many cities offer programs to turn your tree to mulch or wood chips and some cities even
+                use them for important environmental projects.
+            </p>
+            <br>
+            <p class="double">
+                 In Broward County, an annual Chip-a-Tree initiative exists where you can drop your tree off at most public park locations.
+            </p>
+            <h3 class="ui header"><B>4. Give experiential gifts</B></h3>
+            <p class="double">
+                When trying to come up with the perfect gift for our loved ones, our minds are often materialistic oriented. However by
+                offering experiential gifts, you can minimize overindulgence and wrapping and create unforgettable memories that will be sure
+                to be remembered -- <I> so long as the activity is not environmentally destructive and safe in regards to the pandemic.</I>
+            </p>
+            <h3 class="ui header"><B>5. Purchase eco-friendly and locally made gifts</B></h3>
+            <p class="double">
+                Even if you chose to purchase retail gifts, look for items that come from sustainable materials,
+                can easily be recycled after use, and are locally made. Locally manufactured items do not have to be
+                shipped across the country or even the world, meaning you would be reducing the amount of vehicle pollution
+                needed to transport your package.
+            </p>
+            <br>
+            <p class="double">
+                You can additionally look to make handicrafts and DIY gifts that can be as much fun to make as to receive.
+            </p>
+            <br>
+            <p class="double"><B>
+                Whether you decide to implement these tips in your holiday life or even donate your time and money to an environmental task, think of it as your present to the earth.
+                After all, if anyone deserves it, it’s the environment.
+            </B></p>
+            <br>
+            <p>
+                <I>
+                    -- The Planet Programmers
+                </I>
+            </p>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--Footer code-->
+  <div class="ui inverted vertical footer segment">
+    <div class="ui container">
+      <div class="ui stackable inverted divided equal height stackable grid">
+        <div class="three wide column">
+          <h4 class="ui inverted header">The Planet Programmers</h4>
+          <div class="ui inverted link list">
+            <a class="item">Angelina Wu</a>
+            <a class="item">Anna Priore</a>
+            <a class="item">Jennifer Chiou </a>
+            <a class="item">Kayla Pena</a>
+            <a class="item">Sarah Dufays</a>
+
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">Contacts</h4>
+           <div class="ui inverted link list">
+            <a class="item">pl246821@ahschool.com</a>
+            <a class="item">annapriore07@gmail.com</a>
+            <a class="item">pl247091@ahschool.com</a>
+            <a class="item">pl247111@ahschool.com</a>
+            <a class="item">pl247711@ahschool.com</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+</html>
