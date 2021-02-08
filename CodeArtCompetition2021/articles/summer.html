@@ -1,1 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
+  <!-- Site Properties -->
+  <title>Homepage - Semantic</title>
+  <link rel="stylesheet" type="text/css" href="../dist/components/reset.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/site.css">
+
+  <link rel="stylesheet" type="text/css" href="../dist/components/container.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/grid.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/header.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/image.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/menu.css">
+
+  <link rel="stylesheet" type="text/css" href="../dist/components/divider.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/dropdown.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/segment.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/button.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/list.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/icon.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/sidebar.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/transition.css">
+
+<!--  Style for the header - top of the website-->
+  <style type="text/css">
+    .hidden.menu {
+      display: none;
+    }
+
+    .masthead.segment {
+      min-height: 700px;
+      padding: 1em 0em;
+    }
+    .masthead .logo.item img {
+      margin-right: 1em;
+    }
+    .masthead .ui.menu .ui.button {
+      margin-left: 0.5em;
+    }
+    .masthead h1.ui.header {
+      margin-top: 3em;
+      margin-bottom: 0em;
+      font-size: 4em;
+      font-weight: normal;
+    }
+    .masthead h2 {
+      font-size: 1.7em;
+      font-weight: normal;
+    }
+
+    .ui.vertical.stripe {
+      padding: 8em 0em;
+    }
+    .ui.vertical.stripe h3 {
+      font-size: 2em;
+    }
+    .ui.vertical.stripe .button + h3,
+    .ui.vertical.stripe p + h3 {
+      margin-top: 3em;
+    }
+    .ui.vertical.stripe .floated.image {
+      clear: both;
+    }
+    .ui.vertical.stripe p {
+      font-size: 1.33em;
+    }
+    .ui.vertical.stripe .horizontal.divider {
+      margin: 3em 0em;
+    }
+
+    .quote.stripe.segment {
+      padding: 0em;
+    }
+    .quote.stripe.segment .grid .column {
+      padding-top: 5em;
+      padding-bottom: 5em;
+    }
+
+    .footer.segment {
+      padding: 5em 0em;
+    }
+
+    .secondary.pointing.menu .toc.item {
+      display: none;
+    }
+
+    @media only screen and (max-width: 700px) {
+      .ui.fixed.menu {
+        display: none !important;
+      }
+      .secondary.pointing.menu .item,
+      .secondary.pointing.menu .menu {
+        display: none;
+      }
+      .secondary.pointing.menu .toc.item {
+        display: block;
+      }
+      .masthead.segment {
+        min-height: 350px;
+      }
+      .masthead h1.ui.header {
+        font-size: 2em;
+        margin-top: 1.5em;
+      }
+      .masthead h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+      }
+      .tab { margin-left: 60px;}
+    }
+
+      .double {
+        line-height: 2 ;
+    }
+
+
+  </style>
+
+<!--  JS files - opening menu and sidebar  -->
+  <script src="assets/library/jquery.min.js"></script>
+  <script src="../dist/components/visibility.js"></script>
+  <script src="../dist/components/sidebar.js"></script>
+  <script src="../dist/components/transition.js"></script>
+  <script>
+  $(document)
+    .ready(function() {
+
+      // fix menu when passed
+      $('.masthead')
+        .visibility({
+          once: false,
+          onBottomPassed: function() {
+            $('.fixed.menu').transition('fade in');
+          },
+          onBottomPassedReverse: function() {
+            $('.fixed.menu').transition('fade out');
+          }
+        })
+      ;
+
+      // create sidebar and attach to menu open
+      $('.ui.sidebar')
+        .sidebar('attach events', '.toc.item')
+      ;
+
+    })
+  ;
+  </script>
+</head>
+<body>
+
+<!-- Main Menu, same for every file  -->
+<div class="ui large top fixed hidden menu">
+  <div class="ui container">
+    <a class="item">Home</a>
+    <a class="item">About</a>
+    <a class="item">Informational Articles</a>
+    <a class="item">How to help</a>
+    <div class="right menu">
+<!--      <div class="item">-->
+<!--        <a class="ui button">Log in</a>-->
+<!--      </div>-->
+      <div class="item">
+        <a class="ui primary button">Sign Up</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sidebar Menu -->
+<div class="ui vertical inverted sidebar menu">
+  <a class="active item">Home</a>
+  <a class="item">About</a>
+  <a class="item">Informational Articles</a>
+  <a class="item">How to Help</a>
+  <a class="item">Login</a>
+  <a class="item">Signup</a>
+</div>
+
+
+<!-- Page Contents -->
+<div class="pusher"><div class="ui inverted vertical masthead center aligned segment">
+
+    <div class="ui container">
+      <div class="ui large secondary inverted pointing menu">
+        <a class="toc item">
+          <i class="sidebar icon"></i>
+        </a>
+        <a class="item" href="../index.html">Home</a>
+        <a class="item" href="../about.html">About</a>
+        <a class="item" href="../inform.html">Informational Articles</a>
+        <a class="item" href="../howtohelp.html">How to Help</a>
+        <div class="right item">
+<!--          <a class="ui inverted button" href="login.html">Log in</a>-->
+          <a class="ui inverted button" href="https://forms.gle/V23FG1WvSWTsMZTk7">Sign Up</a>
+        </div>
+      </div>
+    </div>
+
+
+<!--  Title at the top of the page-->
+    <div class="ui text container">
+      <h1 class="ui inverted header">
+        An Environmentally Friendly Florida Summer
+      </h1>
+      <h2>If the earth can change, why can't we?</h2>
+      <div class="ui huge primary button"<p ><a style="color:#FFFFFF" href="../howtohelp.html">Return to Home</a></p></div>
+    </div>
+</div>
+
+<!--  Actual web content-->
+<div class="ui vertical stripe segment">
+    <div class="ui middle aligned stackable grid container">
+      <div class="row">
+        <div class="fifteen wide column">
+          <h3 class="ui header">An Environmentally Friendly Florida Summer</h3>
+          <p class="double">When thinking about Florida, thoughts of summer sun, beaches, and fun immediately come to mind, and with
+            good reason. Summertime is the peak of the year for Floridian residents as well as tourists. However, it is
+            becoming increasingly likely that our beloved beaches will be lost to the growing problem that is global warming.</p>
+          <br>
+          <p class="double">Wondering how to help? Read on for some suggestions of how to do your part for the environment during summer!</p>
+          <h3 class="ui header"><b> 1.  Beat the Heat</b></h3>
+          <p class="double"> It's no secret that summer temperatures make us feel like we’re about to explode, and the natural response is to
+            crank up the air conditioning.</p>
+          <br>
+          <p class="double"><b>
+            Avoid doing this.
+          </b></p>
+          <br>
+          <p class="double">
+            This is one of the many instincts that the global population needs to unlearn if we want to save our planet.
+            Instead of cooling the air around you, cool your own body! A chilled glass of water does wonders for body temperature.
+            So does a wet washcloth across the forehead or rubbing an ice cube over your wrists. Take advantage of the heat! Cold showers
+            save energy and cool down the body. Additionally, it forces you to spend less time in the shower, therefore wasting less water.
+          </p>
+          </div>
+          <h3 class="ui header"><b><br><br> 2.  Using environmentally friendly products</b></h3>
+          <p class="double">
+            Using the wrong products contributes to the loss of beaches. <i> The two most common ones? Deodorant and sunscreen.</i>
+          </p>
+          <br>
+          <p class="double">
+            When sticky sweat from the heat worsens a day, we apply deodorant. <i> Our advice? </i> Make sure it is environmentally friendly,
+            unlike most of the big brands. A great example of an eco-friendly brand is Toms! That is mainly due to the fact that triclosan,
+            a chemical that suppresses body odor, can be very harmful to animals when it gets into an aquatic, sunny environment. Even when
+            we shower at night and the day’s deodorant washes down the drain, it enters waterways and sits atop the water’s surface, just
+            waiting to be licked up by some unsuspecting animal. To make matters worse, the packaging is often non-recyclable and non-biodegradable. Since deodorant is so commonly put on people’s bodies, it’s important to make sure we are using eco-friendly, natural products for both ourselves and the environment.
+          </p>
+          <br>
+          <p class="double">
+            Additionally, spray deodorant is a huge contributor to air pollution because it emits volatile organic compounds that contribute
+            to ground-level ozone levels, a key component of smog. This breaks down the ozone layer, which causes the sun to have greater
+            effects on humans. <i>The solution?</i> Sunscreen. <br> <br> At this point, it most likely doesn’t come as a surprise that
+            sunscreen hurts the environment as well. Between 6000 and 14,000 tons of sunscreen washes off of ocean swimmers per year,
+            then finding its way to coral reefs and seriously harming them. Four major ingredients have been proven as threats to coral.
+          </p>
+          <br>
+          <p class="double">
+            At this point, it most likely doesn’t come as a surprise that sunscreen hurts the environment as well. Between 6000 and 14,000
+            tons of sunscreen washes off of ocean swimmers per year, then finding its way to coral reefs and seriously harming them. Four
+            major ingredients have been proven as threats to coral.
+          </p>
+          <p class="double"><ul style="font-size:20px" style="font-family:"'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif" type="1">
+              <li class="double"><b>Oxybenzone:</b> a chemical that absorbs harmful sun rays. More importantly, it deranges coral reproduction, damages
+                its DNA, and bleaches it.</li>
+              <br>
+              <li><b>Butylparaben:</b> a preservative that bleaches coral.</li>
+              <br>
+              <li><b>Octinoxate:</b> filters out harmful sun rays and bleaches coral as well.</li>
+              <br>
+              <li><b>4-methylbenzylidene camphor:</b> filters out harmful sun rays and bleaches coral. Luckily, this ingredient is banned in the USA. </li>
+              <br>
+              </ul></p>
+              <br>
+          <p class="double">
+            Some eco-friendly, ocean-friendly, and reef-safe sunscreen brands you can use include:
+          </p>
+           <p class="double"><ul style="font-size:20px" style="font-family:"'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif" type="1">
+                <li class="double"><b>Badger SPF 35 Sport Sunscreen,</b> which uses a reef-safe mineral Zinc Oxide and contains no oxybenzone, octinoxate,
+                  or other harsh chemical active ingredients. It is unscented, biodegradable, 100% certified natural, and 94% certified
+                  organic. The tube is also recyclable!</li>
+                <br>
+                <li class="double"><b>Life Basics SPF 30 All Natural Sunscreen</b> is a natural, vegan sunblock. It contains active ingredients Zinc Oxide and other
+                  naturally-derived ingredients such as calendula, green tea, and reship oil which help to nourish the skin.</li>
+                <br>
+                <li class="double"><b>Wawai’s Organics Ph</b> is an ocean-friendly, all-natural, Philippines-made sunscreen that is packaged in
+                  refillable canisters.</li>
+                <br>
+                <li class="double"><b>Thinksport SPF 50+ Sunscreen</b> eco-friendly sunscreen contains 20% non nano Zinc Oxide, which is safer
+                  for the oceans, and has no biologically toxic chemicals.</li>
+                <br>
+                <li class="double"><b>WOTNOT Sunscreen SPF 30 </b> is a skin-friendly and ocean-friendly sunscreen that is made of zinc oxide. It is also
+                  cruelty-free, gluten-free, and palm oil-free.</li>
+                </ul></p>
+                <br>
+        <h3 class="ui header"><b> 3.  Cleaning Up Our Beaches</b></h3>
+        <p class="double">
+          In addition to the sea level rising, we could also potentially lose our sandy vacation spot to the enormous heaps of garbage
+          piling up on our shores. You can't exactly blame the sharks for that one. Every soda can you carelessly toss onto the beach
+          after a nice lunch adds to this problem. Not only does it look and smell awful, but it also only takes one gust of wind to blow
+          said soda can into the water and kill an animal.
+        </p>
+        <br>
+        <p class="double"><i>
+          If a dead shark washed up on the shore, would you really want to stay there? Absolutely not.
+        </i></p>
+        <p class="double">
+          <b>So do your part.</b> Rid yourself of the mindset that littering one time won’t make a difference just because you responsibly get
+          rid of your trash every other time. It only takes one piece of trash to take the life of an innocent animal. Take part in local
+          beach cleanups. If your community has none available, organize one! It only takes one person to make a difference, but a few friends
+          can always help.
+        </p>
+         <br>
+            <p>
+                <I>
+                    -- The Planet Programmers
+                </I>
+            </p>
+      </div>
+    </div>
+  </div>
+
+<!--Footer code-->
+  <div class="ui inverted vertical footer segment">
+    <div class="ui container">
+      <div class="ui stackable inverted divided equal height stackable grid">
+        <div class="three wide column">
+          <h4 class="ui inverted header">The Planet Programmers</h4>
+          <div class="ui inverted link list">
+            <a class="item">Angelina Wu</a>
+            <a class="item">Anna Priore</a>
+            <a class="item">Jennifer Chiou </a>
+            <a class="item">Kayla Pena</a>
+            <a class="item">Sarah Dufays</a>
+
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">Contacts</h4>
+           <div class="ui inverted link list">
+            <a class="item">pl246821@ahschool.com</a>
+            <a class="item">annapriore07@gmail.com</a>
+            <a class="item">pl247091@ahschool.com</a>
+            <a class="item">pl247111@ahschool.com</a>
+            <a class="item">pl247711@ahschool.com</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+</html>
