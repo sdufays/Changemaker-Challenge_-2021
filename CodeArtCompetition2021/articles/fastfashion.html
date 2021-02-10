@@ -1,1 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
+  <!-- Site Properties -->
+  <title>Homepage - Semantic</title>
+  <link rel="stylesheet" type="text/css" href="../dist/components/reset.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/site.css">
+
+  <link rel="stylesheet" type="text/css" href="../dist/components/container.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/grid.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/header.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/image.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/menu.css">
+
+  <link rel="stylesheet" type="text/css" href="../dist/components/divider.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/dropdown.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/segment.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/button.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/list.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/icon.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/sidebar.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/transition.css">
+
+<!--  Style for the header - top of the website-->
+  <style type="text/css">
+    .hidden.menu {
+      display: none;
+    }
+
+    .masthead.segment {
+      min-height: 700px;
+      padding: 1em 0em;
+    }
+    .masthead .logo.item img {
+      margin-right: 1em;
+    }
+    .masthead .ui.menu .ui.button {
+      margin-left: 0.5em;
+    }
+    .masthead h1.ui.header {
+      margin-top: 3em;
+      margin-bottom: 0em;
+      font-size: 4em;
+      font-weight: normal;
+    }
+    .masthead h2 {
+      font-size: 1.7em;
+      font-weight: normal;
+    }
+
+    .ui.vertical.stripe {
+      padding: 8em 0em;
+    }
+    .ui.vertical.stripe h3 {
+      font-size: 2em;
+    }
+    .ui.vertical.stripe .button + h3,
+    .ui.vertical.stripe p + h3 {
+      margin-top: 3em;
+    }
+    .ui.vertical.stripe .floated.image {
+      clear: both;
+    }
+    .ui.vertical.stripe p {
+      font-size: 1.33em;
+    }
+    .ui.vertical.stripe .horizontal.divider {
+      margin: 3em 0em;
+    }
+
+    .quote.stripe.segment {
+      padding: 0em;
+    }
+    .quote.stripe.segment .grid .column {
+      padding-top: 5em;
+      padding-bottom: 5em;
+    }
+
+    .footer.segment {
+      padding: 5em 0em;
+    }
+
+    .secondary.pointing.menu .toc.item {
+      display: none;
+    }
+
+    @media only screen and (max-width: 700px) {
+      .ui.fixed.menu {
+        display: none !important;
+      }
+      .secondary.pointing.menu .item,
+      .secondary.pointing.menu .menu {
+        display: none;
+      }
+      .secondary.pointing.menu .toc.item {
+        display: block;
+      }
+      .masthead.segment {
+        min-height: 350px;
+      }
+      .masthead h1.ui.header {
+        font-size: 2em;
+        margin-top: 1.5em;
+      }
+      .masthead h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+      }
+      .tab { margin-left: 60px;}
+    }
+.double {
+      line-height: 2;
+    }
+
+  </style>
+
+<!--  JS files - opening menu and sidebar  -->
+  <script src="assets/library/jquery.min.js"></script>
+  <script src="../dist/components/visibility.js"></script>
+  <script src="../dist/components/sidebar.js"></script>
+  <script src="../dist/components/transition.js"></script>
+  <script>
+  $(document)
+    .ready(function() {
+
+      // fix menu when passed
+      $('.masthead')
+        .visibility({
+          once: false,
+          onBottomPassed: function() {
+            $('.fixed.menu').transition('fade in');
+          },
+          onBottomPassedReverse: function() {
+            $('.fixed.menu').transition('fade out');
+          }
+        })
+      ;
+
+      // create sidebar and attach to menu open
+      $('.ui.sidebar')
+        .sidebar('attach events', '.toc.item')
+      ;
+
+    })
+  ;
+  </script>
+</head>
+<body>
+
+<!-- Main Menu, same for every file  -->
+<div class="ui large top fixed hidden menu">
+  <div class="ui container">
+    <a class="item">Home</a>
+    <a class="item">About</a>
+    <a class="item">Informational Articles</a>
+    <a class="item">How to help</a>
+    <div class="right menu">
+<!--      <div class="item">-->
+<!--        <a class="ui button">Log in</a>-->
+<!--      </div>-->
+      <div class="item">
+        <a class="ui primary button">Sign Up</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sidebar Menu -->
+<div class="ui vertical inverted sidebar menu">
+  <a class="active item">Home</a>
+  <a class="item">About</a>
+  <a class="item">Informational Articles</a>
+  <a class="item">How to Help</a>
+  <a class="item">Login</a>
+  <a class="item">Signup</a>
+</div>
+
+
+<!-- Page Contents -->
+<div class="pusher"><div class="ui inverted vertical masthead center aligned segment">
+
+    <div class="ui container">
+      <div class="ui large secondary inverted pointing menu">
+        <a class="toc item">
+          <i class="sidebar icon"></i>
+        </a>
+        <a class="item" href="../index.html">Home</a>
+        <a class="item" href="../about.html">About</a>
+        <a class="item" href="../inform.html">Informational Articles</a>
+        <a class="item" href="../howtohelp.html">How to Help</a>
+        <div class="right item">
+<!--          <a class="ui inverted button" href="login.html">Log in</a>-->
+          <a class="ui inverted button" href="https://forms.gle/V23FG1WvSWTsMZTk7">Sign Up</a>
+        </div>
+      </div>
+    </div>
+
+
+<!--  Title at the top of the page-->
+    <div class="ui text container">
+      <h1 class="ui inverted header">
+        Reducing your Environmental Fast Fashion Footprint
+      </h1>
+      <h2>If the earth can change, why can't we?</h2>
+      <div class="ui huge primary button"<p><a style="color:#FFFFFF" href="../howtohelp.html">Return to Home</a></p></div>
+    </div>
+</div>
+
+<!--  Actual web content-->
+<div class="ui vertical stripe segment">
+    <p class="ui middle aligned stackable grid container">
+      <ul class="row">
+        <ul class="fifteen wide column">
+          <h3 class="ui header" class="double">Reducing your Environmental Fast Fashion Footprint</h3>
+          <p class="double">Fast fashion is defined as a highly profitable business model based on replicating trendy and high-fashion
+              designs, and mass-producing them at low cost’. Its demand has drastically increased as more and more people desire the
+              latest fashion trends for a lower price tag. As much as we love strolling through our favorite stores and seeing affordable,
+              cute outfits along the aisles, we need to acknowledge the hidden cost that fast fashion evokes on our planet:</p>
+            <p class="double">The fashion industry emits more carbon than international flights and maritime shipping <B>combined</B>,
+                <I>its consequences extending to creating 10 percent of the world’s carbon emissions.</I> Clothing production has nearly
+                doubled in the last decade, and yet we only keep the clothes for half as long.</p>
+            <p class="double">Here are some statistics on just how much our fashion consumerism harms the environment : </p>
+            <p><ul style="font-size:20px" style="font-family:"'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif" type="1">
+                    <li class="double">85% of textiles end up in dumps per year.</li>
+                    <li class="double">The equivalent of one garbage truck full of clothes is burned or dumped in a landfill
+                        every second. </li>
+                    <li class="double">Beyond this, the fast fashion industry leads to hundreds of thousands of microfibers
+                        being thrown into the ocean each year, the equivalent of 50 billion plastic bottles.</li>
+                    <li class="double">It’s the second largest consumer industry of water, requiring about 700 gallons
+                        to produce one cotton shirt and 2 000 gallons of water to produce a pair of jeans, according to Earth.org.</li></ul>
+           <br>
+           <br>
+           <br>
+
+           <p><I>Convinced and want to help?</I></p>
+
+           <p>Here are a few tips to help reduce your personal fast fashion footprint</p>
+
+           <h3 class="ui header" class="double">1. Buy Less ! </h3>
+           <p class="double">The want for overindulgence rooted in the mannerisms of first world inhabitants urges people
+               to both buy and spend much more than they need. <I>Do you really need 10 pairs of jeans? 20 pairs of shoes?</I> We
+               tend to want to think that buying clothes makes us happy. Maybe it’s time we reconsider our mentalities
+               and start thinking about the environment. </p>
+          <h3 class="ui header" class="double">2. Buy Better Quality Clothes.</h3>
+          <p>What’s the point in buying cheap garments if you know you will throw them out in the next few months?
+              If everyone collectively stops buying low quality clothes, it’ll push companies to start making quality
+              clothes that with a lower environmental footprint.</p>
+          <p style="text-align:left;">
+            <img src="https://images.squarespace-cdn.com/content/v1/5981c7129f7456741cde6662/1509117624030-BO5DG266R5ZLEQZX6CD2/ke17ZwdGBToddI8pDm48kDaUESuqwRjkxbUsInn7X8cUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8PaoYXhp6HxIwZIk7-Mi3Tsic-L2IOPH3Dwrhl-Ne3Z2Ynh3B3qsoo6BGorFt3NILVGZK_U9dSG2a26HQpn9lcYKMshLAGzx4R3EDFOm1kBS/How+to+recognize+if+a+piece+of+cloth+is+of+good+quality"
+            width="300" height="600">
+          </p>
+          <h3 class="ui header" class="double">3. Or Look into Sustainable Brands</h3>
+          <p>As environmental awareness increases, more and more brands take their environmental footprint into account.
+              Not all fashion brands contribute to the deprivation of the environment. In fact, a large number of companies
+              are emerging with more sustainable initiatives to help reduce textile pollution, such as implementing more organic ways
+              of growing cotton.
+          </p>
+          <br>
+          <p>Some fashion brands that are using environmentally responsible tactics, as well as offering affordable and contemporary
+              clothing, include Pact, Boody, Ecovibe, MadeWell, and Able. These socially and environmentally conscious brands prioritize
+              the use of organic and sustainable materials such as recycled cotton, organic bamboo, and hemp, which typically last longer
+              than synthetic fibers.
+          </p>
+          <br>
+          <p> If these brands don’t fit your style, there are many alternatives that include buying vintage or second-hand clothing from
+              sites such as Poshmark, Ebay, Etsy, and Depop.
+          </p>
+          <br>
+          <p><I>Do your research! Look into the organizations named above and other environmentally-friendly brands,
+              preferably local or nearby ones.
+            </I></p>
+          <br>
+          <p><a href="https://www.thegoodtrade.com/features/fair-trade-clothing">Click here to obtain more information about just a few of the
+              most well-known sustainable clothing brands that are betting against fast fashion.
+          </a></p>
+          <h3 class="ui header" class="double">4. Think twice before throwing out your clothes!</h3>
+          <p class="double">Chances are there’s probably a friend or family member that’s looking for the exact thing you’re trying to get rid of
+              - given it’s in decent condition of course. Ask around!</p>
+          <p>
+               And if you can’t find somebody willing to take it, just drop it off at one at one of Florida’s many donate centers.
+              Not only would you be minimizing waste (and therefore your environmental footprint), but you would also be supporting
+              a larger cause for those who need it most!  Below are some of the links with their information:
+          </p>
+          <p><ul style="font-size:20px" style="font-family:"'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif" type="1">
+                <li><a href="https://goodwillsouthflorida.org/donation-centers">https://goodwillsouthflorida.org/donation-centers</a></li></ul></p>
+          <p>For any questions about what you can and cannot donate, click here → <a href="https://goodwillsouthflorida.org/donations-dos-donts">Click here to obtain more information about just a few of the
+              most well-known sustainable clothing brands that are betting against fast fashion.
+          </a></p>
+           <p><ul style="font-size:20px" style="font-family:"'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif" type="1">
+                <li class="double"><a href="https://satruck.org/">https://satruck.org/</a></li>
+                <li class="double"><a href=" https://www.browardoutreachcenter.org/springcleaning-miami-broward.php"> https://www.browardoutreachcenter.org/springcleaning-miami-broward.php</a></li>
+             </ul>
+          <p>
+              Can’t Donate it? Recycle it! Textiles can be recycled to make new clothing.
+          </p>
+          <h3 class="ui header" class="double">5. Keep an eye on your washing!</h3>
+          <p style="text-align:center;">
+                    <img src="https://www.breathingwasher.com/wp-content/uploads/2020/02/WashingMachineImpact.png"
+                    width="500" height="700">
+                   <img src="https://images.squarespace-cdn.com/content/v1/5981c7129f7456741cde6662/1509118814211-5ZZ5WWYZS04ZIRBWML96/ke17ZwdGBToddI8pDm48kIqmsSpFd6YzCOZwPWmco-UUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8PaoYXhp6HxIwZIk7-Mi3Tsic-L2IOPH3Dwrhl-Ne3Z2Qx5fiNNOtLodTuJ8RotdFFrBgBhZavwOYEcgLYVH0VsKMshLAGzx4R3EDFOm1kBS/7+tips+to+reduce+our+laundry+impact"
+                    width="500" height="700">
+          </p>
+         <br>
+         <p>Bear in mind that as consumers, we are at the core of the fashion industry’s decisions and have a responsibility to our planet.</p>
+          <div class="ui vertical stripe segment">
+          <div class="ui text container">
+            <h2 style="text-align:center;">Remember, change starts with you.</h2>
+            <h2 style="text-align:center;">Eco-friendliness is not just an escape from a catastrophic future, but also as a road towards a brighter one. There is no planet B, so let’s work together to preserve the world we live in.</h2>
+                  <p align="center">- Planet Programers</p>
+          </div>
+        </div>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+<!--Footer code-->
+  <div class="ui inverted vertical footer segment">
+    <div class="ui container">
+      <div class="ui stackable inverted divided equal height stackable grid">
+        <div class="three wide column">
+          <h4 class="ui inverted header">The Planet Programmers</h4>
+          <div class="ui inverted link list">
+            <a class="item">Angelina Wu</a>
+            <a class="item">Anna Priore</a>
+            <a class="item">Jennifer Chiou </a>
+            <a class="item">Kayla Pena</a>
+            <a class="item">Sarah Dufays</a>
+
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">Contacts</h4>
+           <div class="ui inverted link list">
+            <a class="item">pl246821@ahschool.com</a>
+            <a class="item">annapriore07@gmail.com</a>
+            <a class="item">pl247091@ahschool.com</a>
+            <a class="item">pl247111@ahschool.com</a>
+            <a class="item">pl247711@ahschool.com</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+</html>
