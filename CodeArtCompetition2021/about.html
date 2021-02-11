@@ -5,12 +5,11 @@
     <title><!DOCTYPE html>
 <html>
 <head>
-  <!-- Standard Meta -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <!-- Site Properties -->
+  <!-- Styling from CSS files to format the page -->
   <title>Homepage - Semantic</title>
   <link rel="stylesheet" type="text/css" href="../dist/components/reset.css">
   <link rel="stylesheet" type="text/css" href="../dist/components/site.css">
@@ -30,6 +29,7 @@
   <link rel="stylesheet" type="text/css" href="../dist/components/sidebar.css">
   <link rel="stylesheet" type="text/css" href="../dist/components/transition.css">
 
+  <!-- Style for the header - top of the website-->
   <style type="text/css">
     .hidden.menu {
       display: none;
@@ -119,6 +119,7 @@
 
   </style>
 
+  <!--  JS files - opening menu and sidebar  -->
   <script src="assets/library/jquery.min.js"></script>
   <script src="../dist/components/visibility.js"></script>
   <script src="../dist/components/sidebar.js"></script>
@@ -126,8 +127,7 @@
   <script>
   $(document)
     .ready(function() {
-
-      // fix menu when passed
+      // fixes menu when passed
       $('.masthead')
         .visibility({
           once: false,
@@ -151,7 +151,7 @@
 </head>
 <body>
 
-<!-- Following Menu -->
+<!-- Main Menu, same for every file  -->
 <div class="ui large top fixed hidden menu">
   <div class="ui container">
     <a class="item">Home</a>
@@ -159,9 +159,6 @@
     <a class="item">Informational Articles</a>
     <a class="item">How to Help</a>
     <div class="right menu">
-<!--      <div class="item">-->
-<!--        <a class="ui button">Log in</a>-->
-<!--      </div>-->
       <div class="item">
         <a class="ui primary button">Sign Up</a>
       </div>
@@ -183,38 +180,40 @@
 <!-- Page Contents -->
 <div class="pusher">
   <div class="ui inverted vertical masthead center aligned segment">
-
     <div class="ui container">
       <div class="ui large secondary inverted pointing menu">
         <a class="toc item">
           <i class="sidebar icon"></i>
         </a>
+        <!-- assign files to different buttons-->
         <a class="item" href="index.html">Home</a>
         <a class="active item">About</a>
         <a class="item" href="inform.html">Informational Articles</a>
         <a class="item" href="howtohelp.html">How to Help</a>
         <div class="right item">
-<!--          <a class="ui inverted button" href="login.html">Log in</a>-->
           <a class="ui inverted button" href="https://forms.gle/V23FG1WvSWTsMZTk7">Sign Up</a>
         </div>
       </div>
     </div>
 
+    <!-- Title at the top of the Page -->
     <div class="ui text container">
       <h1 class="ui inverted header">
         About
       </h1>
       <h2>The Planet Programmers</h2>
-      <div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div>
+      <div class="ui huge primary button"><p ><a style="color:#FFFFFF" href="howtohelp.html">Get Started</a></p></div>
     </div>
   </div>
 
 
+<!-- Start of web page, first section-->
   <div class="ui vertical stripe segment">
     <div class="ui middle aligned stackable grid container">
       <div class="row">
         <div class="fifteen wide column">
           <h3 class="ui header">About Us</h3>
+          <!-- Index of page, sends user to different subsections-->
           <p><ul class="tab">
           <p><a href="#ourgoals">Our Goals</a></p>
           <p><a href="#yourchoicesmattertothenvironment">Your Choices Matter to the Environment</a></p>
@@ -226,6 +225,7 @@
     </div>
   </div>
 
+ <!-- second section, (our goals)-->
 <div class="ui vertical stripe segment" id="ourgoals">
     <div class="ui middle aligned stackable grid container">
       <div class="row">
@@ -237,6 +237,7 @@
     </div>
   </div>
 
+  <!-- third section, (Your choices matter...)-->
   <div class="ui vertical stripe segment" id="yourchoicesmattertothenvironment">
     <div class="ui middle aligned stackable grid container">
       <div class="row">
@@ -250,6 +251,7 @@
           <p>All too often do people disregard the environment and in turn their environmental footprint because they don’t believe one single person can have such a large impact. However, with a large percent of the global population harboring this mindset, effects are closer than one might think. Studies show that oil will run out in 53 years, natural gas in 54, and coal in 110. For Generation Z, these statistics matter. Oil and natural gas will be gone by the time we die if we don’t start acting now, and our children will grow up without even the prospect of it. We need to start conserving and taking these environmental changes seriously now.</p>
           <p><B>Let’s choose the planet.</B></p>
           <br>
+          <!-- Image-->
           <p style="text-align:center;">
             <img src="https://ec.europa.eu/jrc/sites/jrcsh/files/styles/normal-responsive/public/adobestock_313426278.jpeg?itok=rd45TpQv"  width="800" height="500">
           </p>
@@ -258,6 +260,8 @@
     </div>
   </div>
 
+
+  <!-- fourth section, (What choices should we make?)-->
   <div class="ui vertical stripe segment" id="whatchoicesshouldwemake">
     <div class="ui middle aligned stackable grid container">
       <div class="row">
@@ -268,6 +272,7 @@
           <p>You don’t have to be vegan, but eating plant-based whenever you can or feel like it <B>will</B> help the environment. You don’t have to shop exclusively at Reformation, but you can shop at thrift stores, avoid fast fashion, or just try to reduce your consumerism whenever possible. You can turn off the shower when you aren’t using it or water your lawn through a drip system. <B>It will still help the environment. </B></p>
           <p>And for those little choices, remember every action makes a difference. Walk to school if you live close enough. Carpool with a friend. Buy food from a small local business. Our How to Help page provides tips for how to reduce waste in each season, information on how to recycle, and printable/downloadable PDF templates for you to track recommended habits or whatever habits you want to develop.</p>
           <p>Remember, any step towards a better environment is a step forward, as long as you stick with it. </p>
+           <!-- Image-->
           <p style="text-align:center;">
             <img src="https://www.nhm.ac.uk/content/dam/nhmwww/discover/actions-for-the-planet/planet-actions-waste-two-column.jpg.thumb.1160.1160.jpg"  width="700" height="400">
           </p>
@@ -276,6 +281,7 @@
     </div>
   </div>
 
+  <!-- fifth section, (But Aren't Big Corporations...)-->
     <div class="ui vertical stripe segment" id="butarentbig">
     <div class="ui middle aligned stackable grid container">
       <div class="row">
@@ -289,7 +295,7 @@
     </div>
   </div>
 
-
+  <!-- sixth section, ending-->
  <div class="ui vertical stripe segment">
       <div class="ui text container">
         <h2 style="text-align:center;">At Clean Step, we see eco-friendliness as not just an escape from a catastrophic future, but also as a road towards a brighter one. Remember, there’s no planet B.</h2>
@@ -298,7 +304,7 @@
     </div>
 
 
-
+  <!--Footer code at the bottom left -->
   <div class="ui inverted vertical footer segment">
     <div class="ui container">
       <div class="ui stackable inverted divided equal height stackable grid">
@@ -310,9 +316,9 @@
             <a href="#" class="item">Jennifer Chiou </a>
             <a href="#" class="item">Kayla Pena</a>
             <a href="#" class="item">Angelina Wu</a>
-
           </div>
         </div>
+        <!-- footer code at the bottom right -->
         <div class="three wide column">
           <h4 class="ui inverted header">Contacts</h4>
           <div class="ui inverted link list">
@@ -321,12 +327,7 @@
             <a href="#" class="item">pl247091@ahschool.com</a>
             <a href="#" class="item">pl247111@ahschool.com</a>
             <a href="#" class="item">pl246821@ahschool.com</a>
-
           </div>
-        </div>
-        <div class="seven wide column">
-          <h4 class="ui inverted header">-</h4>
-          <p>-</p>
         </div>
       </div>
     </div>
