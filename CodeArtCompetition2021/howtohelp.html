@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- Standard Meta -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <!-- Site Properties -->
+  <!-- Styling from CSS files to format the page -->
   <title>Homepage - Semantic</title>
   <link rel="stylesheet" type="text/css" href="../dist/components/reset.css">
   <link rel="stylesheet" type="text/css" href="../dist/components/site.css">
@@ -26,6 +25,7 @@
   <link rel="stylesheet" type="text/css" href="../dist/components/sidebar.css">
   <link rel="stylesheet" type="text/css" href="../dist/components/transition.css">
 
+  <!-- Style for the header - top of the website-->
   <style type="text/css">
     .hidden.menu {
       display: none;
@@ -111,14 +111,15 @@
         font-size: 1.5em;
       }
 
+    <!-- Resizes internet images, often used-->
+        }
+      img.resize {
+      max-width:15%;
+      max-height:15%;
     }
-  img.resize {
-  max-width:15%;
-  max-height:15%;
-}
-
   </style>
 
+  <!--  JS files - opening menu and sidebar  -->
   <script src="assets/library/jquery.min.js"></script>
   <script src="../dist/components/visibility.js"></script>
   <script src="../dist/components/sidebar.js"></script>
@@ -127,7 +128,7 @@
   $(document)
     .ready(function() {
 
-      // fix menu when passed
+      // fixes menu when passed
       $('.masthead')
         .visibility({
           once: false,
@@ -151,7 +152,7 @@
 </head>
 <body>
 
-<!-- Following Menu -->
+<!-- Main Menu, same for every file  -->
 <div class="ui large top fixed hidden menu">
   <div class="ui container">
     <a class="item">Home</a>
@@ -159,9 +160,6 @@
     <a class="item">Informational Articles</a>
     <a class=" active item">How to Help</a>
     <div class="right menu">
-<!--      <div class="item">-->
-<!--        <a class="ui button">Log in</a>-->
-<!--      </div>-->
       <div class="item">
         <a class="ui primary button">Sign Up</a>
       </div>
@@ -172,9 +170,9 @@
 <!-- Sidebar Menu -->
 <div class="ui vertical inverted sidebar menu">
   <a class="item">Home</a>
-  <a class="item">About</a>
+  <a class="active item">About</a>
   <a class="item">Informational Articles</a>
-  <a class="active item">How to Help</a>
+  <a class="item">How to Help</a>
   <a class="item">Login</a>
   <a class="item">Signup</a>
 </div>
@@ -189,26 +187,28 @@
         <a class="toc item">
           <i class="sidebar icon"></i>
         </a>
+        <!-- assign files to different buttons-->
         <a class="item" href="index.html">Home</a>
         <a class="item" href="about.html">About</a>
         <a class="item" href="inform.html">Informational Articles</a>
         <a class="active item">How to Help</a>
         <div class="right item">
-<!--          <a class="ui inverted button" href="login.html">Log in</a>-->
           <a class="ui inverted button" href="https://forms.gle/V23FG1WvSWTsMZTk7">Sign Up</a>
         </div>
       </div>
     </div>
 
+    <!-- Title at the top of the Page -->
     <div class="ui text container">
       <h1 class="ui inverted header">
         How To Help
       </h1>
       <h2>Better Environment, Better Tomorrow</h2>
-      <div class="ui huge primary button" <p ><a style="color:#FFFFFF" href="howtohelp.html">Get Started</a></p></div>
+      <div class="ui huge primary button"><p ><a style="color:#FFFFFF" href="howtohelp.html">Get Started</a></p></div>
     </div>
   </div>
 
+<!-- Start of web page, first section-->
   <div class="ui vertical stripe segment">
     <div class="ui middle aligned stackable grid container">
       <div class="row">
@@ -222,12 +222,14 @@
     </div>
   </div>
 
+  <!-- second section (the index)-->
   <div class="ui vertical stripe segment">
     <div class="ui middle aligned stackable grid container">
       <div class="row">
         <div class="fifteen wide column">
           <h3 class="ui header"><I>So what can we do to spark that change?</I></h3>
           <p>Here at Clean Step, we provide resources that make a sustainable lifestyle accessible. Explore our various suggestions and tips to reduce your carbon footprint today, tomorrow, and for the next generations:</p>
+          <!-- Index of page, sends user to different subsections-->
           <p><ul class="tab">
               <p><a href="#footprint">Quantifying your Environmental Footprint</a></p>
               <p><a href="#seasonal">Seasonal Advice</a></p>
@@ -245,6 +247,7 @@
     </div>
   </div>
 
+<!-- First section of index, footprint calc-->
 <div class="ui vertical stripe segment" id="footprint">
     <div class="ui middle aligned stackable grid container">
       <div class="row">
@@ -259,6 +262,7 @@
     </div>
   </div>
 
+<!-- Second section of index, seasons-->
 <div class="ui vertical stripe segment" id="seasonal">
     <div class="ui middle aligned stackable grid container">
       <div class="row">
@@ -267,6 +271,7 @@
           <p style="text-align:center;">
             <img src="https://i.pinimg.com/564x/1b/6d/b8/1b6db86ff5d6a5a5a2a24d18677443e0.jpg">
           </p>
+          <!-- four buttons-->
           <a class="ui large button" href="articles/winter.html">Winter</a>
           <a class="ui large button" href="articles/spring.html">Spring</a>
           <a class="ui large button" href="articles/summer.html">Summer</a>
@@ -276,16 +281,18 @@
     </div>
   </div>
 
+  <!--  Third section of index, recycling-->
 <div class="ui vertical stripe segment" id="guidelines">
     <div class="ui middle aligned stackable grid container">
       <div class="row">
         <div class="fifteen wide column">
           <h3 class="ui header"><I>Do you recycle? Well chances are, you’re not doing it right.</I></h3>
           <p>In Orange County, the recycling rejection rate was 85% in 2020.  In Fort Lauderdale, around twenty-five percent of what comes in isn’t recyclable. And in 2018, Clearwater sent ⅓ of their recyclable materials to be incinerated because they were contaminated.</p>
-
+          <!-- Image-->
           <p style="text-align:center;" width="1%" height="1%">
             <img src="http://www.isiborosecure.com/wp-content/uploads/2014/04/Environment.jpg" width="200" height="200">
           </p>
+          <!-- button-->
           <p>Check out our recycling guidelines article to find out how to recycle correctly in South Florida!</p>
           <a class="ui large button" href="articles/recycling.html">Recycling Guidelines</a>
         </div>
@@ -293,21 +300,25 @@
     </div>
   </div>
 
+  <!--  Fourth section of index, reducing plastic-->
 <div class="ui vertical stripe segment" id="reducingplastic">
     <div class="ui middle aligned stackable grid container">
       <div class="row">
         <div class="fifteen wide column">
           <h3 class="ui header"><I>Every year, 8 million metric tons of plastics enter our ocean on top of the estimated 150 million metric tons that currently circulate our marine environments.</I></h3>
+          <!-- Image-->
           <p style="text-align:center;">
             <img src="https://www.iberdrola.com/wcorp/gc/prod/en_US/comunicacion/reducir_consumo_plastico_mult_1_res/ConsejosPlastico_746x419_ENG.jpg">
           </p>
           <p>Find out how you can lessen this impact by reducing your plastic consumption in this article!</p>
+          <!--button-->
           <a class="ui large button" href="articles/reducingplastic.html">Reducing Plastic</a>
         </div>
       </div>
     </div>
   </div>
 
+  <!--  Fifth section of index, covid-->
 <div class="ui vertical stripe segment" id="covid">
     <div class="ui middle aligned stackable grid container">
       <div class="row">
@@ -324,30 +335,37 @@
     </div>
   </div>
 
+
+  <!--  Sixth section of index, fast fashion-->
 <div class="ui vertical stripe segment" id="fastfashion">
     <div class="ui middle aligned stackable grid container">
       <div class="row">
         <div class="fifteen wide column">
           <h3 class="ui header"><I>Go shopping often?</I></h3>
+          <!-- image-->
           <p style="text-align:center;" width="1" height="1">
             <img src="https://www.collectmyclothes.co.uk/wp-content/uploads/2019/12/iStock-1160030693-1.jpg" width="450" height="300">
           </p>
           <p>Did you know 10% of the world’s carbon emissions come from fashion production? Check out the link below to learn about how and why you should move away from fast fashion.</p>
+          <!--button-->
           <a class="ui large button" href="articles/fastfashion.html">Moving Away from Fast Fashion</a>
         </div>
       </div>
     </div>
   </div>
 
+    <!--  seventh section of index, habits-->
 <div class="ui vertical stripe segment" id="habits">
     <div class="ui middle aligned stackable grid container">
       <div class="row">
         <div class="fifteen wide column">
           <h3 class="ui header"><I>Here at Clean Step, we believe in the power of routine. A sustainable lifestyle can only be successfully built on a foundation of small changes.</I></h3>
+          <!--image-->
           <p style="text-align:center;">
             <img src="https://i1.wp.com/www.circularonline.co.uk/wp-content/uploads/2020/11/greenliving.png?resize=860%2C516&ssl=1">
           </p>
           <p>Click below for tips and PDFs that help you develop habits that will last a lifetime.</p>
+          <!-- 2 buttons-->
           <a class="ui large button" href="articles/habits.html">Forming and Reflecting on Habits </a>
           <a class="ui large button" href="pictures/HabitTrackers.zip" download="HabitTrackers.zip">Download PDFs for making and tracking habits</a>
         </div>
@@ -355,51 +373,61 @@
     </div>
   </div>
 
+  <!--  Eighth section of index, petitions-->
   <div class="ui vertical stripe segment" id="petitions">
     <div class="ui middle aligned stackable grid container">
       <div class="row">
         <div class="fifteen wide column">
           <h3 class="ui header"><I>Petitions are an amazing way to gather a support base of people who care about an issue. Luckily there’s no shortage of environmental problems that the earth needs us to stand up for.</I></h3>
+          <!--image-->
           <p style="text-align:center;">
             <img src="https://www.thepalmettopanther.com/wp-content/uploads/2019/11/Screen-Shot-2019-11-19-at-12.40.01-PM.png">
           </p>
           <p>Check out the button below to get involved!</p>
+           <!--button-->
           <a class="ui large button" href="articles/petitions.html">Petitions</a>
         </div>
       </div>
     </div>
   </div>
 
+  <!--  Ninth section of index, transporations-->
   <div class="ui vertical stripe segment" id="transportation">
     <div class="ui middle aligned stackable grid container">
       <div class="row">
         <div class="fifteen wide column">
           <h3 class="ui header"><I>Everyone knows the benefits of public transportation, but our options in South Florida are limited.</I></h3>
+           <!--image-->
           <p style="text-align:center;">
             <img src="https://image.freepik.com/free-vector/passengers-waiting-bus-city-queue-town-road-flat-vector-illustration-public-transport-urban-lifestyle_74855-8493.jpg">
           </p>
           <p>Here are some accessible modes of public transportation you can use.</p>
+           <!--button-->
           <a class="ui large button" href="articles/transportation.html">Public Transportation in South Florida</a>
         </div>
       </div>
     </div>
   </div>
 
+  <!--  Tenth section of index, transporations-->
 <div class="ui vertical stripe segment" id="ecotourism">
     <div class="ui middle aligned stackable grid container">
       <div class="row">
         <div class="fifteen wide column">
           <h3 class="ui header"><I>Love the environment?</I></h3>
           <p>Here are some places to visit for you to get in touch with Mother Nature!</p>
+           <!--image-->
            <p style="text-align:left;">
             <img src="https://www.justraveling.com/wp-content/uploads/2016/08/ecotourism_10Ta.jpg" height="300" width="450">
           </p>
+           <!--button-->
           <a class="ui large button" href="articles/ecotourism.html">Ecotourism Spots in South Florida</a>
         </div>
       </div>
     </div>
   </div>
 
+   <!--  Last section of web page-->
  <div class="ui vertical stripe segment">
       <div class="ui text container">
         <h2 style="text-align:center;">Remember, change starts with you.</h2>
@@ -408,6 +436,7 @@
       </div>
     </div>
 
+  <!--Footer code at the bottom left -->
   <div class="ui inverted vertical footer segment">
     <div class="ui container">
       <div class="ui stackable inverted divided equal height stackable grid">
@@ -422,6 +451,7 @@
 
           </div>
         </div>
+        <!-- footer code at the bottom right -->
         <div class="three wide column">
           <h4 class="ui inverted header">Contacts</h4>
            <div class="ui inverted link list">
